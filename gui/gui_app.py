@@ -14,6 +14,8 @@ class UiFactory(object):
             from gui.gtk.application import GuiApp
         elif gui == "qt3":
             from gui.qt3.application import GuiApp
+        elif gui == "qt4":
+            from gui.qt4.application import GuiApp
         else:
             from gui.nogui.application import GuiApp
 
