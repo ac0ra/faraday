@@ -5,7 +5,8 @@ See the file 'doc/LICENSE' for the license information
 
 '''
 import PyQt4 as qt
-import qttable
+from PyQt4 import QtGui
+#import qttable
 import model.guiapi as guiapi
 
 
@@ -481,15 +482,15 @@ class ListEditDialog(qt.QDialog):
         return qt.QSize(400, 400)
 
 
-class EditionTable(qttable.QTable):
+class EditionTable(qt.QTGui.QTableWidget):
     """The table which shows the details of item selected on the tree"""
 
     def __init__(self, parent, rows = 0, columns = 2):
         qttable.QTable.__init__(self, parent)
         self.setFocusPolicy(qt.QWidget.NoFocus)
                                                       
-        self.setNumCols(columns)
-        self.setNumRows(rows)
+        self.setColumnCount(columns)
+        self.setRowCount(rows)
         self.setTopMargin(0)
         self.setLeftMargin(0)
         self.setShowGrid(False)
